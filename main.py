@@ -13,7 +13,7 @@ def get_sku_info(sku):
     )
     short_id: int = req.json()["data"]["products"][0]["id"] // 100000
 
-    return req.json(), short_id
+    return short_id
 
 
 if __name__ == "__main__":
