@@ -11,7 +11,9 @@ def get_sku_info(sku):
         method="GET",
         url=f"https://card.wb.ru/cards/detail?nm={sku}"
     )
-    return req.json()
+    short_id: int = req.json()["data"]["products"][0]["id"] // 100000
+
+    return req.json(), short_id
 
 
 if __name__ == "__main__":
